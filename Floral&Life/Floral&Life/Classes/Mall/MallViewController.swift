@@ -8,11 +8,13 @@
 
 import UIKit
 
-class MallViewController: UIViewController {
+class MallViewController: BaseViewController
+{
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setNavigationBar("hp_type_16x16_", rightImagesName: ["f_search_22x22_"])
     }
 }

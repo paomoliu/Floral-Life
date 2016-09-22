@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-
-    override func viewDidLoad() {
+class ProfileViewController: BaseViewController
+{
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setNavigationBar("", rightImagesName: ["pc_setting_40x40_"])
     }
 }

@@ -8,9 +8,10 @@
 
 import UIKit
 
-class MainViewController: UITabBarController {
-
-    override func viewDidLoad() {
+class MainViewController: UITabBarController
+{
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         addChildViewControllers()
@@ -19,7 +20,8 @@ class MainViewController: UITabBarController {
     /**
      从JSON文件动态添加子控制器
      */
-    private func addChildViewControllers() {
+    private func addChildViewControllers()
+    {
         //获取Json文件路径
         let path = NSBundle.mainBundle().pathForResource("MainVCSettings.json", ofType: nil)
         
@@ -49,7 +51,8 @@ class MainViewController: UITabBarController {
      - parameter title:  子控制器标题
      - parameter index:  子控制器tabbar对应index
      */
-    private func addChildViewController(vcName: String, title: String, index: String) {
+    private func addChildViewController(vcName: String, title: String, index: String)
+    {
         //动态获取命名空间
 //        let nameSpace = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"] as! String
         let nameSpace = "Floral_Life"
