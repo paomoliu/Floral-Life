@@ -1,0 +1,23 @@
+ [
+  {
+  "vcName": "SubjectViewController",
+  "title": "专题",
+  "index": "0"
+  },
+  {
+  "vcName": "CommunityViewController",
+  "title": "社区",
+  "index": "1"
+  },
+  {
+  "vcName": "MallViewController",
+  "title": "商城",
+  "index": "2"
+  },
+  {
+  "vcName": "ProfileViewController",
+  "title": "我的",
+  "index": "3"
+  
+  }
+  ]

@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65288ABD1D92E56800C01352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65288ABC1D92E56800C01352 /* AppDelegate.swift */; };
+		65288AC11D92E56800C01352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65288AC01D92E56800C01352 /* Assets.xcassets */; };
+		65288ACF1D92E56800C01352 /* Floral_LifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65288ACE1D92E56800C01352 /* Floral_LifeTests.swift */; };
+		65288ADA1D92E56800C01352 /* Floral_LifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65288AD91D92E56800C01352 /* Floral_LifeUITests.swift */; };
+		659A40441D9387E2004EDF67 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659A40431D9387E2004EDF67 /* MainViewController.swift */; };
+		659A40471D93929C004EDF67 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659A40461D93929C004EDF67 /* ProfileViewController.swift */; };
+		659A40491D9392B8004EDF67 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659A40481D9392B8004EDF67 /* CommunityViewController.swift */; };
+		659A404B1D9392C3004EDF67 /* MallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659A404A1D9392C3004EDF67 /* MallViewController.swift */; };
+		659A404D1D9392CE004EDF67 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659A404C1D9392CE004EDF67 /* SubjectViewController.swift */; };
+		659A404F1D9394E7004EDF67 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 659A404E1D9394E7004EDF67 /* MainVCSettings.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65288ACB1D92E56800C01352 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65288AB11D92E56800C01352 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65288AB81D92E56800C01352;
+			remoteInfo = "Floral&Life";
+		};
+		65288AD61D92E56800C01352 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65288AB11D92E56800C01352 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65288AB81D92E56800C01352;
+			remoteInfo = "Floral&Life";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		65288AB91D92E56800C01352 /* Floral&Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Floral&Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65288ABC1D92E56800C01352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		65288AC01D92E56800C01352 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65288AC51D92E56800C01352 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65288ACA1D92E56800C01352 /* Floral&LifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Floral&LifeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65288ACE1D92E56800C01352 /* Floral_LifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floral_LifeTests.swift; sourceTree = "<group>"; };
+		65288AD01D92E56800C01352 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65288AD51D92E56800C01352 /* Floral&LifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Floral&LifeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65288AD91D92E56800C01352 /* Floral_LifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floral_LifeUITests.swift; sourceTree = "<group>"; };
+		65288ADB1D92E56800C01352 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		659A40431D9387E2004EDF67 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		659A40461D93929C004EDF67 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		659A40481D9392B8004EDF67 /* CommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		659A404A1D9392C3004EDF67 /* MallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MallViewController.swift; sourceTree = "<group>"; };
+		659A404C1D9392CE004EDF67 /* SubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
+		659A404E1D9394E7004EDF67 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65288AB61D92E56800C01352 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65288AC71D92E56800C01352 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65288AD21D92E56800C01352 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65288AB01D92E56800C01352 = {
+			isa = PBXGroup;
+			children = (
+				65288ABB1D92E56800C01352 /* Floral&Life */,
+				65288ACD1D92E56800C01352 /* Floral&LifeTests */,
+				65288AD81D92E56800C01352 /* Floral&LifeUITests */,
+				65288ABA1D92E56800C01352 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65288ABA1D92E56800C01352 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65288AB91D92E56800C01352 /* Floral&Life.app */,
+				65288ACA1D92E56800C01352 /* Floral&LifeTests.xctest */,
+				65288AD51D92E56800C01352 /* Floral&LifeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65288ABB1D92E56800C01352 /* Floral&Life */ = {
+			isa = PBXGroup;
+			children = (
+				65288ABC1D92E56800C01352 /* AppDelegate.swift */,
+				659A403A1D938763004EDF67 /* Classes */,
+				65288AC01D92E56800C01352 /* Assets.xcassets */,
+				65288AC51D92E56800C01352 /* Info.plist */,
+			);
+			path = "Floral&Life";
+			sourceTree = "<group>";
+		};
+		65288ACD1D92E56800C01352 /* Floral&LifeTests */ = {
+			isa = PBXGroup;
+			children = (
+				65288ACE1D92E56800C01352 /* Floral_LifeTests.swift */,
+				65288AD01D92E56800C01352 /* Info.plist */,
+			);
+			path = "Floral&LifeTests";
+			sourceTree = "<group>";
+		};
+		65288AD81D92E56800C01352 /* Floral&LifeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				65288AD91D92E56800C01352 /* Floral_LifeUITests.swift */,
+				65288ADB1D92E56800C01352 /* Info.plist */,
+			);
+			path = "Floral&LifeUITests";
+			sourceTree = "<group>";
+		};
+		659A403A1D938763004EDF67 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				659A403B1D938763004EDF67 /* Category */,
+				659A403C1D938763004EDF67 /* Community */,
+				659A403D1D938763004EDF67 /* Main */,
+				659A403E1D938763004EDF67 /* Mall */,
+				659A403F1D938763004EDF67 /* Network */,
+				659A40401D938763004EDF67 /* Profile */,
+				659A40411D938763004EDF67 /* Subject */,
+				659A40421D938763004EDF67 /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		659A403B1D938763004EDF67 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		659A403C1D938763004EDF67 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				659A40481D9392B8004EDF67 /* CommunityViewController.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		659A403D1D938763004EDF67 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				659A404E1D9394E7004EDF67 /* MainVCSettings.json */,
+				659A40431D9387E2004EDF67 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		659A403E1D938763004EDF67 /* Mall */ = {
+			isa = PBXGroup;
+			children = (
+				659A404A1D9392C3004EDF67 /* MallViewController.swift */,
+			);
+			path = Mall;
+			sourceTree = "<group>";
+		};
+		659A403F1D938763004EDF67 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		659A40401D938763004EDF67 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				659A40461D93929C004EDF67 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		659A40411D938763004EDF67 /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				659A404C1D9392CE004EDF67 /* SubjectViewController.swift */,
+			);
+			path = Subject;
+			sourceTree = "<group>";
+		};
+		659A40421D938763004EDF67 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65288AB81D92E56800C01352 /* Floral&Life */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65288ADE1D92E56800C01352 /* Build configuration list for PBXNativeTarget "Floral&Life" */;
+			buildPhases = (
+				65288AB51D92E56800C01352 /* Sources */,
+				65288AB61D92E56800C01352 /* Frameworks */,
+				65288AB71D92E56800C01352 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Floral&Life";
+			productName = "Floral&Life";
+			productReference = 65288AB91D92E56800C01352 /* Floral&Life.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65288AC91D92E56800C01352 /* Floral&LifeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65288AE11D92E56800C01352 /* Build configuration list for PBXNativeTarget "Floral&LifeTests" */;
+			buildPhases = (
+				65288AC61D92E56800C01352 /* Sources */,
+				65288AC71D92E56800C01352 /* Frameworks */,
+				65288AC81D92E56800C01352 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65288ACC1D92E56800C01352 /* PBXTargetDependency */,
+			);
+			name = "Floral&LifeTests";
+			productName = "Floral&LifeTests";
+			productReference = 65288ACA1D92E56800C01352 /* Floral&LifeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		65288AD41D92E56800C01352 /* Floral&LifeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65288AE41D92E56800C01352 /* Build configuration list for PBXNativeTarget "Floral&LifeUITests" */;
+			buildPhases = (
+				65288AD11D92E56800C01352 /* Sources */,
+				65288AD21D92E56800C01352 /* Frameworks */,
+				65288AD31D92E56800C01352 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65288AD71D92E56800C01352 /* PBXTargetDependency */,
+			);
+			name = "Floral&LifeUITests";
+			productName = "Floral&LifeUITests";
+			productReference = 65288AD51D92E56800C01352 /* Floral&LifeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65288AB11D92E56800C01352 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Sunshine Girl";
+				TargetAttributes = {
+					65288AB81D92E56800C01352 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2QLC8E6LG3;
+					};
+					65288AC91D92E56800C01352 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2QLC8E6LG3;
+						TestTargetID = 65288AB81D92E56800C01352;
+					};
+					65288AD41D92E56800C01352 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2QLC8E6LG3;
+						TestTargetID = 65288AB81D92E56800C01352;
+					};
+				};
+			};
+			buildConfigurationList = 65288AB41D92E56800C01352 /* Build configuration list for PBXProject "Floral&Life" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65288AB01D92E56800C01352;
+			productRefGroup = 65288ABA1D92E56800C01352 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65288AB81D92E56800C01352 /* Floral&Life */,
+				65288AC91D92E56800C01352 /* Floral&LifeTests */,
+				65288AD41D92E56800C01352 /* Floral&LifeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65288AB71D92E56800C01352 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				659A404F1D9394E7004EDF67 /* MainVCSettings.json in Resources */,
+				65288AC11D92E56800C01352 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65288AC81D92E56800C01352 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65288AD31D92E56800C01352 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65288AB51D92E56800C01352 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				659A404B1D9392C3004EDF67 /* MallViewController.swift in Sources */,
+				659A404D1D9392CE004EDF67 /* SubjectViewController.swift in Sources */,
+				659A40491D9392B8004EDF67 /* CommunityViewController.swift in Sources */,
+				659A40471D93929C004EDF67 /* ProfileViewController.swift in Sources */,
+				65288ABD1D92E56800C01352 /* AppDelegate.swift in Sources */,
+				659A40441D9387E2004EDF67 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65288AC61D92E56800C01352 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65288ACF1D92E56800C01352 /* Floral_LifeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65288AD11D92E56800C01352 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65288ADA1D92E56800C01352 /* Floral_LifeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65288ACC1D92E56800C01352 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65288AB81D92E56800C01352 /* Floral&Life */;
+			targetProxy = 65288ACB1D92E56800C01352 /* PBXContainerItemProxy */;
+		};
+		65288AD71D92E56800C01352 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65288AB81D92E56800C01352 /* Floral&Life */;
+			targetProxy = 65288AD61D92E56800C01352 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		65288ADC1D92E56800C01352 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65288ADD1D92E56800C01352 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65288ADF1D92E56800C01352 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Floral&Life/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cqnu.Floral-Life";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		65288AE01D92E56800C01352 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Floral&Life/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cqnu.Floral-Life";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		65288AE21D92E56800C01352 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Floral&LifeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cqnu.Floral-LifeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Floral&Life.app/Floral&Life";
+			};
+			name = Debug;
+		};
+		65288AE31D92E56800C01352 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Floral&LifeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cqnu.Floral-LifeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Floral&Life.app/Floral&Life";
+			};
+			name = Release;
+		};
+		65288AE51D92E56800C01352 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Floral&LifeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cqnu.Floral-LifeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Floral&Life";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		65288AE61D92E56800C01352 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Floral&LifeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cqnu.Floral-LifeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Floral&Life";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65288AB41D92E56800C01352 /* Build configuration list for PBXProject "Floral&Life" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65288ADC1D92E56800C01352 /* Debug */,
+				65288ADD1D92E56800C01352 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65288ADE1D92E56800C01352 /* Build configuration list for PBXNativeTarget "Floral&Life" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65288ADF1D92E56800C01352 /* Debug */,
+				65288AE01D92E56800C01352 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65288AE11D92E56800C01352 /* Build configuration list for PBXNativeTarget "Floral&LifeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65288AE21D92E56800C01352 /* Debug */,
+				65288AE31D92E56800C01352 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65288AE41D92E56800C01352 /* Build configuration list for PBXNativeTarget "Floral&LifeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65288AE51D92E56800C01352 /* Debug */,
+				65288AE61D92E56800C01352 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65288AB11D92E56800C01352 /* Project object */;
+}
