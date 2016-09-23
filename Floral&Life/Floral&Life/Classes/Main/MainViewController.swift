@@ -8,14 +8,17 @@
 
 import UIKit
 
-class MainViewController: UITabBarController
+class MainViewController: UITabBarController, UITabBarControllerDelegate
 {
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
         addChildViewControllers()
+        delegate = self
     }
+    
+    // MARK: - Private Method
     
     /**
      从JSON文件动态添加子控制器
@@ -69,4 +72,30 @@ class MainViewController: UITabBarController
         
         addChildViewController(nav)
     }
+    
+    /**
+     跳转到登录界面
+     */
+    private func login()
+    {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let loginVC = storyboard.instantiateViewControllerWithIdentifier("LoginVC")
+        presentViewController(loginVC, animated: true, completion: nil)
+    }
+    
+    // MARK: - UITabBarControllerDelegate
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
+    {
+        if tabBarController.childViewControllers.indexOf(viewController) == tabBarController.childViewControllers.count - 1 {
+            let isLogin = false
+            if !isLogin {
+                login()
+            } //if
+            
+            return isLogin
+        } //if
+        
+        return true
+    } //func
+    
 }

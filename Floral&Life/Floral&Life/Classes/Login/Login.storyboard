@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="QSa-Pt-oil">
             <objects>
-                <viewController id="gKC-uQ-u0E" customClass="LoginViewController" customModule="Floral_Life" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gKC-uQ-u0E" customClass="LoginViewController" customModule="Floral_Life" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="23V-Vb-5Jw"/>
                         <viewControllerLayoutGuide type="bottom" id="pXP-LW-UFS"/>
@@ -30,6 +30,9 @@
                                     <navigationItem id="ol7-TC-JIl">
                                         <barButtonItem key="leftBarButtonItem" image="返回按钮_22x22_" id="f49-Hz-uLB">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="clickedBackBtn:" destination="gKC-uQ-u0E" id="R4H-zC-GFk"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="关闭按钮_18x18_" id="lyr-zp-AZj">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

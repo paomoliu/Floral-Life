@@ -18,4 +18,10 @@ class LoginViewController: UIViewController
 
         navigationBar.hideBlackLine()
     }
+    
+    // MARK: - IBAction Method
+    @IBAction func clickedBackBtn(sender: AnyObject)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
