@@ -15,6 +15,12 @@ class SubjectViewController: BaseViewController
         super.viewDidLoad()
 
         setNav()
+//        Category.loadCategory { (models, error) -> () in
+//
+//        }
+//        Article.loadArticle(0) { (models, error) -> () in
+//            
+//        }
     }
     
     func clickedTitleBtn(btn: TitleButton)

@@ -23,6 +23,11 @@
 		659D65221D94E01B00FBBCF3 /* UINavagationBar+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659D65211D94E01B00FBBCF3 /* UINavagationBar+Category.swift */; };
 		65BF90B91D9437C8006A83B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF90B81D9437C8006A83B0 /* LoginViewController.swift */; };
 		65BF90BB1D9437D5006A83B0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65BF90BA1D9437D5006A83B0 /* Login.storyboard */; };
+		65FE98921D950851008CEB2C /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE98911D950851008CEB2C /* NetworkTool.swift */; };
+		65FE98971D950E59008CEB2C /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE98951D950E59008CEB2C /* Article.swift */; };
+		65FE98981D950E59008CEB2C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE98961D950E59008CEB2C /* Category.swift */; };
+		65FE989A1D951E96008CEB2C /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE98991D951E96008CEB2C /* Author.swift */; };
+		65FE989C1D952300008CEB2C /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE989B1D952300008CEB2C /* BaseModel.swift */; };
 		78FC2B71E4A3B3035EE9E73C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B9E6060CA6503399752587 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +73,12 @@
 		659D65211D94E01B00FBBCF3 /* UINavagationBar+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavagationBar+Category.swift"; sourceTree = "<group>"; };
 		65BF90B81D9437C8006A83B0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		65BF90BA1D9437D5006A83B0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		65FE98911D950851008CEB2C /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
+		65FE98931D95087A008CEB2C /* Floral-LifeBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Floral-LifeBridge.h"; sourceTree = "<group>"; };
+		65FE98951D950E59008CEB2C /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		65FE98961D950E59008CEB2C /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		65FE98991D951E96008CEB2C /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		65FE989B1D952300008CEB2C /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		85E3DCBCBF1670A8CB0A20A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CEC5F6027AB28F26ADAC4CE5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +155,7 @@
 				659A403A1D938763004EDF67 /* Classes */,
 				65288AC01D92E56800C01352 /* Assets.xcassets */,
 				65288AC51D92E56800C01352 /* Info.plist */,
+				65FE98931D95087A008CEB2C /* Floral-LifeBridge.h */,
 			);
 			path = "Floral-Life";
 			sourceTree = "<group>";
@@ -175,7 +187,6 @@
 				659A403C1D938763004EDF67 /* Community */,
 				659A403D1D938763004EDF67 /* Main */,
 				659A403E1D938763004EDF67 /* Mall */,
-				659A403F1D938763004EDF67 /* Network */,
 				659A40401D938763004EDF67 /* Profile */,
 				659A40411D938763004EDF67 /* Subject */,
 				659A40421D938763004EDF67 /* Tools */,
@@ -217,13 +228,6 @@
 			path = Mall;
 			sourceTree = "<group>";
 		};
-		659A403F1D938763004EDF67 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		659A40401D938763004EDF67 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +239,7 @@
 		659A40411D938763004EDF67 /* Subject */ = {
 			isa = PBXGroup;
 			children = (
+				65FE98941D950E59008CEB2C /* Model */,
 				659A404C1D9392CE004EDF67 /* SubjectViewController.swift */,
 			);
 			path = Subject;
@@ -245,6 +250,7 @@
 			children = (
 				659A40541D94237B004EDF67 /* TitleButton.swift */,
 				659A40561D942716004EDF67 /* Tools.swift */,
+				65FE98911D950851008CEB2C /* NetworkTool.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -264,6 +270,17 @@
 				65BF90BA1D9437D5006A83B0 /* Login.storyboard */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		65FE98941D950E59008CEB2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				65FE98951D950E59008CEB2C /* Article.swift */,
+				65FE98961D950E59008CEB2C /* Category.swift */,
+				65FE98991D951E96008CEB2C /* Author.swift */,
+				65FE989B1D952300008CEB2C /* BaseModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,17 +468,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FE98971D950E59008CEB2C /* Article.swift in Sources */,
 				659A404B1D9392C3004EDF67 /* MallViewController.swift in Sources */,
 				659A404D1D9392CE004EDF67 /* SubjectViewController.swift in Sources */,
 				659A40551D94237B004EDF67 /* TitleButton.swift in Sources */,
 				659D65221D94E01B00FBBCF3 /* UINavagationBar+Category.swift in Sources */,
+				65FE98921D950851008CEB2C /* NetworkTool.swift in Sources */,
+				65FE989C1D952300008CEB2C /* BaseModel.swift in Sources */,
 				659A40491D9392B8004EDF67 /* CommunityViewController.swift in Sources */,
 				659A40471D93929C004EDF67 /* ProfileViewController.swift in Sources */,
 				65288ABD1D92E56800C01352 /* AppDelegate.swift in Sources */,
+				65FE989A1D951E96008CEB2C /* Author.swift in Sources */,
 				659A40571D942716004EDF67 /* Tools.swift in Sources */,
 				659A40511D939F8F004EDF67 /* BaseViewController.swift in Sources */,
 				65BF90B91D9437C8006A83B0 /* LoginViewController.swift in Sources */,
 				659A40441D9387E2004EDF67 /* MainViewController.swift in Sources */,
+				65FE98981D950E59008CEB2C /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +611,7 @@
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cqnu.Floral-Life";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Floral-Life/Floral-LifeBridge.h";
 			};
 			name = Debug;
 		};
@@ -602,6 +625,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cqnu.Floral-Life";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Floral-Life/Floral-LifeBridge.h";
 			};
 			name = Release;
 		};
