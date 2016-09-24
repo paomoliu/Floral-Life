@@ -80,14 +80,18 @@ class SubjectGridCell: UICollectionViewCell
     
     // MARK: - 懒加载
     /// 图片
-    private lazy var pictrueView: UIImageView = UIImageView()
+    private lazy var pictrueView: UIImageView = {
+        let imageView = UIImageView()
+        
+        return imageView
+    }()
     
     /// 标题
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "l我allalallala"
         label.font = UIFont.systemFontOfSize(14)
         label.backgroundColor = UIColor.yellowColor()
+        label.sizeToFit()
         
         return label
     }()
@@ -95,7 +99,6 @@ class SubjectGridCell: UICollectionViewCell
     /// 描述
     private lazy var descLabel: UILabel = {
         let label = UILabel()
-        label.text = "lokkjhfhgnasmnjdfagjajgfdjgfe"
         label.font = UIFont.systemFontOfSize(12)
         label.textColor = UIColor.grayColor()
         label.backgroundColor = UIColor.yellowColor()
@@ -120,7 +123,6 @@ class SubjectGridCell: UICollectionViewCell
     /// 阅读量
     private lazy var readLabel: UILabel = {
         let label = UILabel()
-        label.text = "564"
         label.font = UIFont.systemFontOfSize(12)
         label.textColor = UIColor.grayColor()
         
@@ -137,7 +139,6 @@ class SubjectGridCell: UICollectionViewCell
     /// 点赞数
     private lazy var appointLabel: UILabel = {
         let label = UILabel()
-        label.text = "123"
         label.font = UIFont.systemFontOfSize(12)
         label.textColor = UIColor.grayColor()
         

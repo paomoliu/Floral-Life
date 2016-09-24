@@ -91,6 +91,7 @@ extension SubjectViewController: UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kSubjectGridID, forIndexPath: indexPath) as! SubjectGridCell
         cell.subject = subjects![indexPath.item]
         
@@ -105,9 +106,10 @@ private class SubjectViewLayout: UICollectionViewFlowLayout
         let space: CGFloat = 5
         let margin: CGFloat = 10
         let width = (kScreenWidth - margin * 2 - space) / 2
+        let height = width * 3 / 4 + 88
         
         // 设置布局
-        itemSize = CGSizeMake(width, 250)
+        itemSize = CGSizeMake(width, height)
         minimumInteritemSpacing = space
         minimumLineSpacing = space
         scrollDirection = UICollectionViewScrollDirection.Vertical
