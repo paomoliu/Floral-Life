@@ -10,9 +10,17 @@ import UIKit
 
 let kSubjectGridID = "kSubjectGridID"
 let kSubjectListID = "kSubjectListID"
+let kScreenWidth = UIScreen.mainScreen().bounds.width
 
 class SubjectViewController: BaseViewController
 {
+    var subjects: [Article]? {
+        didSet {
+            //当设置完数据，刷新集合视图
+            collectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -21,8 +29,17 @@ class SubjectViewController: BaseViewController
         setupUI()
         
         //注册两种cell
-        collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: kSubjectGridID)
-        collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: kSubjectListID)
+        collectionView.registerClass(SubjectGridCell.self, forCellWithReuseIdentifier: kSubjectGridID)
+        collectionView.registerClass(SubjectListCell.self, forCellWithReuseIdentifier: kSubjectListID)
+        
+        loadData()
+    }
+    
+    func loadData()
+    {
+        Article.loadArticle(0) { (models, error) -> () in
+            self.subjects = models
+        }
     }
     
     func clickedTitleBtn(btn: TitleButton)
@@ -43,7 +60,6 @@ class SubjectViewController: BaseViewController
     {
         // 添加集合视图
         view.addSubview(collectionView)
-        collectionView.backgroundColor = UIColor.redColor()
         
         // 布局前的准备
         let dict = ["collectionView": collectionView]
@@ -58,9 +74,46 @@ class SubjectViewController: BaseViewController
     
     // MARK: - 懒加载
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        var collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: SubjectViewLayout())
+        collectionView.backgroundColor = UIColor(red: 241/255, green: 241/255, blue: 241/255, alpha: 1.0)
+        collectionView.dataSource = self
         
         return collectionView
     }()
+}
+
+extension SubjectViewController: UICollectionViewDataSource
+{
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return subjects?.count ?? 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kSubjectGridID, forIndexPath: indexPath) as! SubjectGridCell
+        cell.subject = subjects![indexPath.item]
+        
+        return cell
+    }
+}
+
+private class SubjectViewLayout: UICollectionViewFlowLayout
+{
+    private override func prepareLayout()
+    {
+        let space: CGFloat = 5
+        let margin: CGFloat = 10
+        let width = (kScreenWidth - margin * 2 - space) / 2
+        
+        // 设置布局
+        itemSize = CGSizeMake(width, 250)
+        minimumInteritemSpacing = space
+        minimumLineSpacing = space
+        scrollDirection = UICollectionViewScrollDirection.Vertical
+        
+        // 设置集合视图属性
+        collectionView?.showsVerticalScrollIndicator = false
+        collectionView?.contentInset = UIEdgeInsetsMake(margin, margin, 0, margin)
+    }
 }

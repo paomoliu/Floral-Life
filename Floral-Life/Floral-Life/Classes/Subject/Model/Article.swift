@@ -18,7 +18,7 @@ class Article: BaseModel
     var smallIcon: String?
     /// 阅读量
     var read: Int = 0
-    /// 喜爱量
+    /// 点赞量
     var appoint: Int = 0
     /// 评价数
     var fnCommentNum: Int = 0
