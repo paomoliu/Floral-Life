@@ -19,6 +19,7 @@ class SubjectListCell: SubjectBaseCell
             identityLabel.text = subject?.author?.identity
             categoryLabel.text = subject?.category?.name
             commentLabel.text = "\(subject!.fnCommentNum)"
+            descLabel.attributedText = UILabel.setLabelLineSpace(6, text: subject!.desc!)
         }
     }
     
