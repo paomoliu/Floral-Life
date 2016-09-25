@@ -77,12 +77,13 @@ class SubjectViewController: BaseViewController
         let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: SubjectViewLayout())
         collectionView.backgroundColor = UIColor(red: 241/255, green: 241/255, blue: 241/255, alpha: 1.0)
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         return collectionView
     }()
 }
 
-extension SubjectViewController: UICollectionViewDataSource
+extension SubjectViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -91,12 +92,21 @@ extension SubjectViewController: UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kSubjectListID, forIndexPath: indexPath) as! SubjectListCell
         cell.subject = subjects![indexPath.item]
         
         return cell
     }
+    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
+//    {
+//        let subject = subjects![indexPath.item]
+//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kSubjectListID, forIndexPath: indexPath) as! SubjectListCell
+//        let height = cell.itemHeight(subject)
+//        Tools.printLog(height)
+//        
+//        return CGSizeMake(320, 250)
+//    }
 }
 
 private class SubjectViewLayout: UICollectionViewFlowLayout

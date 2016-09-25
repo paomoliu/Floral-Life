@@ -90,6 +90,8 @@ class SubjectListCell: SubjectBaseCell
         let avatar = UIImageView()
         avatar.clipsToBounds = true
         avatar.layer.cornerRadius = 25
+        avatar.layer.borderWidth = 1
+        avatar.layer.borderColor = UIColor(red: 241/255, green: 241/255, blue: 241/255, alpha: 1.0).CGColor
         
         return avatar
     }()

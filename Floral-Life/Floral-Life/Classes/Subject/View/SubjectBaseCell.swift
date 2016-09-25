@@ -32,6 +32,14 @@ class SubjectBaseCell: UICollectionViewCell
         fatalError("init(coder:) has not been implemented")
     }
     
+    func itemHeight(subject: Article) -> CGFloat
+    {
+        self.subject = subject
+        self.layoutIfNeeded()
+        
+        return CGRectGetMaxY(readLabel.frame) + 10.0
+    }
+    
     func setupUI()
     {
         // 添加子控件
