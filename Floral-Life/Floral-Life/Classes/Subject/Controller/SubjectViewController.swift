@@ -9,6 +9,7 @@
 import UIKit
 
 let kScreenWidth = UIScreen.mainScreen().bounds.width
+/// 记录是否以显示模式展示数据
 var isGridMode: Bool = false
 
 class SubjectViewController: BaseViewController
@@ -36,7 +37,7 @@ class SubjectViewController: BaseViewController
     
     override func leftAction(btn: UIBarButtonItem)
     {
-        Tools.printLog("")
+        switchToCategory()
     }
     
     override func rightAction(btn: UIBarButtonItem)
@@ -44,7 +45,7 @@ class SubjectViewController: BaseViewController
         if btn.tag == 1 {
             search()
         } else {
-            switchShowMode()
+            switchShowMode(btn)
         }
     }
     
@@ -53,13 +54,24 @@ class SubjectViewController: BaseViewController
         Tools.printLog("")
     }
     
-    func switchShowMode()
+    func switchToCategory()
     {
         Tools.printLog("")
+    }
+    
+    /**
+     切换数据展示模式
+     */
+    func switchShowMode(btn: UIBarButtonItem)
+    {
+        btn.image = UIImage(named: !isGridMode ? "列表_16x16_" : "宫格_16x16_")
         isGridMode = !isGridMode
         collectionView.reloadData()
     }
     
+    /**
+     搜索
+     */
     func search()
     {
         Tools.printLog("")
@@ -72,10 +84,10 @@ class SubjectViewController: BaseViewController
         }
     }
     
-    // MARK: - 私有方法
+    // MARK: - Private Methods
     private func setNav()
     {
-        setNavigationBar("hp_type_16x16_", rightImagesName: ["f_search_22x22_", "列表_16x16_"])
+        setNavigationBar("hp_type_16x16_", rightImagesName: ["f_search_22x22_", "宫格_16x16_"])
         
         
         let titleBtn = TitleButton()
