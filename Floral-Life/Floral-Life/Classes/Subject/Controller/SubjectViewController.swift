@@ -106,7 +106,7 @@ private class SubjectViewLayout: UICollectionViewFlowLayout
         let space: CGFloat = 5
         let margin: CGFloat = 10
         let width = (kScreenWidth - margin * 2 - space) / 2
-        let height = width * 3 / 4 + 88
+        let height = width * 3 / 4 + 80
         
         // 设置布局
         itemSize = CGSizeMake(width, height)

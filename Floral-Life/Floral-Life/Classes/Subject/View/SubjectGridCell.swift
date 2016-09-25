@@ -66,14 +66,14 @@ class SubjectGridCell: UICollectionViewCell
         let appointWidth = appointheight * 19 / 17
         let metrics = ["height": height, "appointWidth": appointWidth, "appointheight": appointheight]
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[pictrueView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[titleLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[descLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-8-[titleLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-8-[descLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-4-[lineView]-4-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-4-[readView]-6-[readLabel]-12-[appointView(appointWidth)]-6-[appointLabel]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[pictrueView(height)]-8-[titleLabel]-6-[descLabel]-12-[lineView]-8-[readView]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[readLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[appointView(appointheight)]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[appointLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[pictrueView(height)]-8-[titleLabel]-6-[descLabel]-12-[lineView]-8-[readView]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: dict)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[readLabel]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[appointView(appointheight)]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: dict)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[appointLabel]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
         
         contentView.addConstraints(cons)
     }
@@ -91,7 +91,7 @@ class SubjectGridCell: UICollectionViewCell
     /// 标题
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFontOfSize(14)
+        label.font = UIFont.systemFontOfSize(12)
         label.backgroundColor = UIColor.yellowColor()
         label.sizeToFit()
         
@@ -101,7 +101,7 @@ class SubjectGridCell: UICollectionViewCell
     /// 描述
     private lazy var descLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFontOfSize(12)
+        label.font = UIFont.systemFontOfSize(10)
         label.textColor = UIColor.grayColor()
         label.backgroundColor = UIColor.yellowColor()
         
