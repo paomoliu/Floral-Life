@@ -194,9 +194,9 @@
 		658F31041D96A4C6008EE319 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				658A2B211D979F3600315E3B /* SubjectBaseCell.swift */,
 				658F31061D96AEEF008EE319 /* SubjectGridCell.swift */,
 				658F31081D96B018008EE319 /* SubjectListCell.swift */,
-				658A2B211D979F3600315E3B /* SubjectBaseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

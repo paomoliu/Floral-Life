@@ -92,7 +92,7 @@ extension SubjectViewController: UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kSubjectGridID, forIndexPath: indexPath) as! SubjectGridCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kSubjectListID, forIndexPath: indexPath) as! SubjectListCell
         cell.subject = subjects![indexPath.item]
         
         return cell
@@ -103,10 +103,14 @@ private class SubjectViewLayout: UICollectionViewFlowLayout
 {
     private override func prepareLayout()
     {
-        let space: CGFloat = 5
+//        let space: CGFloat = 5
+        let space: CGFloat = 12
         let margin: CGFloat = 10
-        let width = (kScreenWidth - margin * 2 - space) / 2
-        let height = width * 3 / 4 + 80
+//        let width = (kScreenWidth - margin * 2 - space) * 0.5
+//        let height = width * 0.75 + 80
+        
+        let width = kScreenWidth - margin * 2
+        let height = width * 0.5 + 150
         
         // 设置布局
         itemSize = CGSizeMake(width, height)

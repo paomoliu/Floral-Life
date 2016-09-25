@@ -25,7 +25,11 @@ class Article: BaseModel
     /// 作者
     var author: Author?
     /// 类别
-    var category: Category?
+    var category: Category? {
+        didSet {
+            category?.name = "［" + category!.name! + "］"
+        }
+    }
     
     /**
      加载文章数据

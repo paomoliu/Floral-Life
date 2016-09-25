@@ -70,7 +70,6 @@ class SubjectBaseCell: UICollectionViewCell
         let label = UILabel()
         label.font = UIFont.systemFontOfSize(12)
         label.backgroundColor = UIColor.yellowColor()
-        label.sizeToFit()
         
         return label
     }()

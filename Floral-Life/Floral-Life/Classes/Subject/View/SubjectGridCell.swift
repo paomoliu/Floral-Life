@@ -16,25 +16,25 @@ class SubjectGridCell: SubjectBaseCell
         super.setupUI()
         
         // 布局前准备
-        let dict = ["pictrueView": pictrueView, "titleLabel": titleLabel, "descLabel": descLabel,
+        let views = ["pictrueView": pictrueView, "titleLabel": titleLabel, "descLabel": descLabel,
                     "lineView": lineView, "readView": readView, "readLabel": readLabel,
                     "appointView": appointView, "appointLabel": appointLabel]
-        
-        /// 布局子控件
         var cons = [NSLayoutConstraint]()
-        let height = frame.width * 3 / 4
+        let height = frame.width * 0.75
         let appointheight: CGFloat = 15
         let appointWidth = appointheight * 19 / 17
         let metrics = ["height": height, "appointWidth": appointWidth, "appointheight": appointheight]
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[pictrueView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-8-[titleLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-8-[descLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-4-[lineView]-4-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-4-[readView]-6-[readLabel]-12-[appointView(appointWidth)]-6-[appointLabel]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[pictrueView(height)]-8-[titleLabel]-6-[descLabel]-12-[lineView]-8-[readView]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[readLabel]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[appointView(appointheight)]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[appointLabel]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        
+        /// 布局子控件
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[pictrueView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-8-[titleLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-8-[descLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-4-[lineView]-4-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-4-[readView]-6-[readLabel]-12-[appointView(appointWidth)]-6-[appointLabel]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[pictrueView(height)]-8-[titleLabel]-6-[descLabel]-12-[lineView]-8-[readView]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[readLabel]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[appointView(appointheight)]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[appointLabel]-6-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
         
         contentView.addConstraints(cons)
     }
