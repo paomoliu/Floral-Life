@@ -82,6 +82,8 @@ class SubjectGridCell: UICollectionViewCell
     /// 图片
     private lazy var pictrueView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView.clipsToBounds = true
         
         return imageView
     }()
