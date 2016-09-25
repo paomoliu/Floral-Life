@@ -15,23 +15,23 @@ class BaseViewController: UIViewController
         super.viewDidLoad()
     }
     
-    func leftAction()
+    func leftAction(btn: UIBarButtonItem)
     {
-        Tools.printLog("")
     }
     
-    func rightAction()
+    func rightAction(btn: UIBarButtonItem)
     {
-        Tools.printLog("")
     }
     
     func setNavigationBar(leftImageName: String, rightImagesName: [String])
     {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: leftImageName), style: UIBarButtonItemStyle.Plain, target: self, action: "leftAction")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: leftImageName), style: UIBarButtonItemStyle.Plain, target: self, action: "leftAction:")
         
         var rightBtnArr: [UIBarButtonItem] = [UIBarButtonItem]()
-        for imageName in rightImagesName as [String] {
-            let btn = UIBarButtonItem(image: UIImage(named: imageName), style: UIBarButtonItemStyle.Plain, target: self, action: "rightAction")
+        for i in 0..<rightImagesName.count {
+            let imageName = rightImagesName[i]
+            let btn = UIBarButtonItem(image: UIImage(named: imageName), style: UIBarButtonItemStyle.Plain, target: self, action: "rightAction:")
+            btn.tag = i + 1
             rightBtnArr.append(btn)
         }
         navigationItem.rightBarButtonItems = rightBtnArr

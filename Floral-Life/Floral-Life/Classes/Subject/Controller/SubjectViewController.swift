@@ -8,9 +8,8 @@
 
 import UIKit
 
-let kSubjectGridID = "kSubjectGridID"
-let kSubjectListID = "kSubjectListID"
 let kScreenWidth = UIScreen.mainScreen().bounds.width
+var isGridMode: Bool = false
 
 class SubjectViewController: BaseViewController
 {
@@ -29,10 +28,41 @@ class SubjectViewController: BaseViewController
         setupUI()
         
         //注册两种cell
-        collectionView.registerClass(SubjectGridCell.self, forCellWithReuseIdentifier: kSubjectGridID)
-        collectionView.registerClass(SubjectListCell.self, forCellWithReuseIdentifier: kSubjectListID)
+        collectionView.registerClass(SubjectGridCell.self, forCellWithReuseIdentifier: SubjectCollectionCellID.GridCellID.rawValue)
+        collectionView.registerClass(SubjectListCell.self, forCellWithReuseIdentifier: SubjectCollectionCellID.ListCellID.rawValue)
         
         loadData()
+    }
+    
+    override func leftAction(btn: UIBarButtonItem)
+    {
+        Tools.printLog("")
+    }
+    
+    override func rightAction(btn: UIBarButtonItem)
+    {
+        if btn.tag == 1 {
+            search()
+        } else {
+            switchShowMode()
+        }
+    }
+    
+    func clickedTitleBtn(btn: TitleButton)
+    {
+        Tools.printLog("")
+    }
+    
+    func switchShowMode()
+    {
+        Tools.printLog("")
+        isGridMode = !isGridMode
+        collectionView.reloadData()
+    }
+    
+    func search()
+    {
+        Tools.printLog("")
     }
     
     func loadData()
@@ -42,14 +72,11 @@ class SubjectViewController: BaseViewController
         }
     }
     
-    func clickedTitleBtn(btn: TitleButton)
-    {
-        Tools.printLog("")
-    }
-    
+    // MARK: - 私有方法
     private func setNav()
     {
         setNavigationBar("hp_type_16x16_", rightImagesName: ["f_search_22x22_", "列表_16x16_"])
+        
         
         let titleBtn = TitleButton()
         titleBtn.addTarget(self, action: "clickedTitleBtn:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -92,7 +119,8 @@ extension SubjectViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kSubjectListID, forIndexPath: indexPath) as! SubjectListCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(SubjectCollectionCellID.cellID(isGridMode)
+            , forIndexPath: indexPath) as! SubjectBaseCell
         cell.subject = subjects![indexPath.item]
         
         return cell
@@ -100,11 +128,6 @@ extension SubjectViewController: UICollectionViewDataSource, UICollectionViewDel
     
 //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
 //    {
-//        let subject = subjects![indexPath.item]
-//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kSubjectListID, forIndexPath: indexPath) as! SubjectListCell
-//        let height = cell.itemHeight(subject)
-//        Tools.printLog(height)
-//        
 //        return CGSizeMake(320, 250)
 //    }
 }
@@ -113,14 +136,17 @@ private class SubjectViewLayout: UICollectionViewFlowLayout
 {
     private override func prepareLayout()
     {
-//        let space: CGFloat = 5
-        let space: CGFloat = 12
+        var space: CGFloat = 12
         let margin: CGFloat = 10
-//        let width = (kScreenWidth - margin * 2 - space) * 0.5
-//        let height = width * 0.75 + 80
         
-        let width = kScreenWidth - margin * 2
-        let height = width * 0.5 + 150
+        var width = kScreenWidth - margin * 2
+        var height = width * 0.5 + 150
+        
+        if isGridMode {
+            space = 5
+            width = (kScreenWidth - margin * 2 - space) * 0.5
+            height = width * 0.75 + 80
+        }
         
         // 设置布局
         itemSize = CGSizeMake(width, height)

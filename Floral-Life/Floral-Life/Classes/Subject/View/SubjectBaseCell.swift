@@ -8,6 +8,25 @@
 
 import UIKit
 
+/**
+ 保存cell的重用标识
+ 
+ - GridCellID: 宫格模式的重用标识
+ - ListCellID: 列表模式的重用标识
+ */
+enum SubjectCollectionCellID: String
+{
+    case GridCellID = "kSubjectGridID"
+    case ListCellID = "kSubjectListID"
+    
+    // 在枚举中利用static修饰一个方法，相当于类中的class修饰方法
+    // 调用枚举值的rawValue，拿到枚举对应的原始值
+    static func cellID(isGridMode: Bool) -> String
+    {
+        return isGridMode ? GridCellID.rawValue : ListCellID.rawValue
+    }
+}
+
 class SubjectBaseCell: UICollectionViewCell
 {
     var subject: Article? {
