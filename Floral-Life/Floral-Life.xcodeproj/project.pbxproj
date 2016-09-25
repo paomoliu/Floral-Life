@@ -11,6 +11,7 @@
 		65288AC11D92E56800C01352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65288AC01D92E56800C01352 /* Assets.xcassets */; };
 		65288ACF1D92E56800C01352 /* Floral-LifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65288ACE1D92E56800C01352 /* Floral-LifeTests.swift */; };
 		65288ADA1D92E56800C01352 /* Floral-LifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65288AD91D92E56800C01352 /* Floral-LifeUITests.swift */; };
+		658A2B221D979F3600315E3B /* SubjectBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A2B211D979F3600315E3B /* SubjectBaseCell.swift */; };
 		658F31051D96A4C6008EE319 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658F31031D96A4C6008EE319 /* SubjectViewController.swift */; };
 		658F31071D96AEEF008EE319 /* SubjectGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658F31061D96AEEF008EE319 /* SubjectGridCell.swift */; };
 		658F31091D96B018008EE319 /* SubjectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658F31081D96B018008EE319 /* SubjectListCell.swift */; };
@@ -62,6 +63,7 @@
 		65288AD51D92E56800C01352 /* Floral-LifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Floral-LifeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65288AD91D92E56800C01352 /* Floral-LifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Floral-LifeUITests.swift"; sourceTree = "<group>"; };
 		65288ADB1D92E56800C01352 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		658A2B211D979F3600315E3B /* SubjectBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectBaseCell.swift; sourceTree = "<group>"; };
 		658F31031D96A4C6008EE319 /* SubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		658F31061D96AEEF008EE319 /* SubjectGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectGridCell.swift; sourceTree = "<group>"; };
 		658F31081D96B018008EE319 /* SubjectListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectListCell.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				658F31061D96AEEF008EE319 /* SubjectGridCell.swift */,
 				658F31081D96B018008EE319 /* SubjectListCell.swift */,
+				658A2B211D979F3600315E3B /* SubjectBaseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				65FE98971D950E59008CEB2C /* Article.swift in Sources */,
 				659A404B1D9392C3004EDF67 /* MallViewController.swift in Sources */,
 				659A40551D94237B004EDF67 /* TitleButton.swift in Sources */,
+				658A2B221D979F3600315E3B /* SubjectBaseCell.swift in Sources */,
 				659D65221D94E01B00FBBCF3 /* UINavagationBar+Category.swift in Sources */,
 				65FE98921D950851008CEB2C /* NetworkTool.swift in Sources */,
 				658F31071D96AEEF008EE319 /* SubjectGridCell.swift in Sources */,
