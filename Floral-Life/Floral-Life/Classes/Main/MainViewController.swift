@@ -10,6 +10,7 @@ import UIKit
 
 class MainViewController: UITabBarController, UITabBarControllerDelegate
 {
+    // MARK: - Life Cycle
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -19,7 +20,6 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate
     }
     
     // MARK: - Private Method
-    
     /**
      从JSON文件动态添加子控制器
      */

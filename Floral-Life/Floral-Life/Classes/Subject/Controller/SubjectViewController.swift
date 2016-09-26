@@ -21,6 +21,7 @@ class SubjectViewController: BaseViewController
         }
     }
     
+    // MARK: - Life Cycle
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -35,11 +36,22 @@ class SubjectViewController: BaseViewController
         loadData()
     }
     
+    // MARK: - Action Methods
+    /**
+    重写导航栏左边按钮的触发事件
+    
+    - parameter btn: 触发事件的按钮
+    */
     override func leftAction(btn: UIBarButtonItem)
     {
         switchToCategory()
     }
     
+    /**
+     重写导航栏右边按钮的触发事件
+     
+     - parameter btn: 触发事件的按钮
+     */
     override func rightAction(btn: UIBarButtonItem)
     {
         if btn.tag == 1 {
@@ -77,6 +89,7 @@ class SubjectViewController: BaseViewController
         Tools.printLog("")
     }
     
+    // MARK: - Load Data
     func loadData()
     {
         Article.loadArticle(0) { (models, error) -> () in
@@ -99,19 +112,24 @@ class SubjectViewController: BaseViewController
     {
         // 添加集合视图
         view.addSubview(collectionView)
+        view.addSubview(categoryView)
         
         // 布局前的准备
-        let dict = ["collectionView": collectionView]
+        let dict = ["collectionView": collectionView, "categoryView": categoryView]
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        categoryView.translatesAutoresizingMaskIntoConstraints = false
         
         // 布局集合视图
         var cons = [NSLayoutConstraint]()
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[collectionView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-64-[collectionView]-44-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[categoryView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-64-[categoryView]-44-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
         view.addConstraints(cons)
     }
     
-    // MARK: - 懒加载
+    // MARK: - Lazy Loading
+    /// 专题数据展示集合视图
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: SubjectViewLayout())
         collectionView.backgroundColor = UIColor(red: 241/255, green: 241/255, blue: 241/255, alpha: 1.0)
@@ -119,6 +137,14 @@ class SubjectViewController: BaseViewController
         collectionView.delegate = self
         
         return collectionView
+    }()
+    
+    /// 分类集合视图
+    private lazy var categoryView: CategoryView = {
+        let categoryView = CategoryView(frame: CGRectZero, collectionViewLayout: CategoryViewLayout())
+        categoryView.backgroundColor = UIColor.whiteColor()
+        
+        return categoryView
     }()
 }
 
@@ -169,5 +195,22 @@ private class SubjectViewLayout: UICollectionViewFlowLayout
         // 设置集合视图属性
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.contentInset = UIEdgeInsetsMake(margin, margin, 0, margin)
+    }
+}
+
+private class CategoryViewLayout: UICollectionViewFlowLayout
+{
+    private override func prepareLayout()
+    {
+        let space: CGFloat = 1
+        
+        // 设置布局
+        itemSize = CGSizeMake((kScreenWidth - 1) * 0.5, kScreenWidth * 0.5 * 0.75)
+        minimumInteritemSpacing = space
+        minimumLineSpacing = space
+        scrollDirection = UICollectionViewScrollDirection.Vertical
+        
+        // 设置集合视图属性
+        collectionView?.showsVerticalScrollIndicator = false
     }
 }

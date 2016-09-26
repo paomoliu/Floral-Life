@@ -39,6 +39,7 @@ class SubjectBaseCell: UICollectionViewCell
         }
     }
     
+    // MARK: - Init Methods
     override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -51,14 +52,9 @@ class SubjectBaseCell: UICollectionViewCell
         fatalError("init(coder:) has not been implemented")
     }
     
-    func itemHeight(subject: Article) -> CGFloat
-    {
-        self.subject = subject
-        self.layoutIfNeeded()
-        
-        return CGRectGetMaxY(readLabel.frame) + 10.0
-    }
-    
+    /**
+     初始化UI
+     */
     func setupUI()
     {
         // 添加子控件
@@ -82,7 +78,7 @@ class SubjectBaseCell: UICollectionViewCell
         appointLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    // MARK: - 懒加载
+    // MARK: - Lazy Loading
     /// 图片
     lazy var pictrueView: UIImageView = {
         let imageView = UIImageView()

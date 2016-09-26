@@ -23,6 +23,7 @@ class SubjectListCell: SubjectBaseCell
         }
     }
     
+    // MARK: - Override Method
     override func setupUI()
     {
         super.setupUI()
@@ -85,7 +86,7 @@ class SubjectListCell: SubjectBaseCell
         contentView.addConstraints(cons)
     }
     
-    // MARK: - 懒加载
+    // MARK: - Lazy Loading
     /// 头像
     private lazy var avatar: UIImageView = {
         let avatar = UIImageView()

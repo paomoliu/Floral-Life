@@ -11,6 +11,7 @@ import SDWebImage
 
 class SubjectGridCell: SubjectBaseCell
 {
+    // MARK: - Override Method
     override func setupUI()
     {
         super.setupUI()
