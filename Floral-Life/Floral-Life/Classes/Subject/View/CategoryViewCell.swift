@@ -18,7 +18,7 @@ class CategoryViewCell: UICollectionViewCell
         }
     }
     
-    // MARK: - Init Methods
+    // MARK: - Life Cycle
     override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -30,9 +30,7 @@ class CategoryViewCell: UICollectionViewCell
         fatalError("init(coder:) has not been implemented")
     }
     
-    /**
-     初始化UI
-     */
+    // MARK: - Setup UI
     private func setupUI()
     {
         // 添加子控件

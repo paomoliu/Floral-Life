@@ -57,12 +57,36 @@ class SubjectViewController: BaseViewController
         Tools.printLog("")
     }
     
-    func switchToCategory()
+    func clickedCategoryBtn()
     {
-        categoryView.hidden = categoryBtn!.selected
         categoryBtn?.selected = !categoryBtn!.selected
-        rotationAnimation()
-    }
+        let angle = M_PI_2
+        let translationY = CGRectGetHeight(blurView.frame) + 64
+        
+        // 整个动画过程先设置tranform，再清空transform，再设置，才能出现一上一下的效果
+        // 若不这样设置，会使得在回去的时候无上动画效果
+        if categoryBtn!.selected {
+            setupBlurView()
+            self.blurView.transform = CGAffineTransformMakeTranslation(0, -translationY)
+        }
+        
+        // weak：相当于OC中__weak，特点对象释放之后会将变量设置为nil, 若用它self需要加！
+        // unowned：相当于OC中unsafe_unretained，特点对象释放之后不会将变量设置为nil
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+            if self.categoryBtn!.selected { // 旋转
+                self.categoryBtn?.transform = CGAffineTransformRotate(self.categoryBtn!.transform, CGFloat(angle))
+                self.blurView.transform = CGAffineTransformIdentity
+            } else { // 回去
+                self.categoryBtn?.transform = CGAffineTransformIdentity
+                self.blurView.transform = CGAffineTransformMakeTranslation(0, -translationY)
+            }
+            }) { (_) -> Void in
+                //回去时，需移除blurView
+                if !self.categoryBtn!.selected {
+                    self.blurView.removeFromSuperview()
+                } //if
+        } //闭包
+    } //func
     
     /**
      切换数据展示模式
@@ -90,29 +114,7 @@ class SubjectViewController: BaseViewController
         }
     }
     
-    // MARK: - Private Methods
-    /**
-     切换分类视图按钮旋转动画
-    */
-    private func rotationAnimation()
-    {
-        let angle = M_PI_2
-        let height = CGRectGetHeight(self.categoryView.frame)
-        let translationY = categoryBtn!.selected ? height : -height
-        
-        //weak：相当于OC中__weak，特点对象释放之后会将变量设置为nil, 若用它self需要加！
-        //unowned：相当于OC中unsafe_unretained，特点对象释放之后不会将变量设置为nil
-        UIView.animateWithDuration(0.5) { [unowned self]() -> Void in
-            if self.categoryBtn!.selected {
-                self.categoryBtn?.transform = CGAffineTransformRotate(self.categoryBtn!.transform, CGFloat(angle))
-                self.categoryView.transform = CGAffineTransformMakeTranslation(0, translationY)
-            } else {
-                self.categoryBtn?.transform = CGAffineTransformIdentity
-                self.categoryView.transform = CGAffineTransformIdentity
-            }
-        }
-    }
-    
+    // MARK: - SetupUI Methods
     private func setNav()
     {
         setNavigationBar("", rightImagesName: ["f_search_22x22_", "宫格_16x16_"])
@@ -123,7 +125,7 @@ class SubjectViewController: BaseViewController
         categoryBtn = UIButton(type: UIButtonType.Custom)
         categoryBtn?.frame = CGRectMake(0, 0, 16, 16)
         categoryBtn?.addSubview(imageView)
-        categoryBtn?.addTarget(self, action: "switchToCategory", forControlEvents: UIControlEvents.TouchUpInside)
+        categoryBtn?.addTarget(self, action: "clickedCategoryBtn", forControlEvents: UIControlEvents.TouchUpInside)
         let leftBarItem = UIBarButtonItem(customView: categoryBtn!)
         navigationItem.leftBarButtonItem = leftBarItem
         
@@ -137,20 +139,32 @@ class SubjectViewController: BaseViewController
     {
         // 添加集合视图
         view.addSubview(collectionView)
-        view.addSubview(categoryView)
         
         // 布局前的准备
-        let dict = ["collectionView": collectionView, "categoryView": categoryView]
+        let views = ["collectionView": collectionView]
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        categoryView.translatesAutoresizingMaskIntoConstraints = false
         
         // 布局集合视图
         var cons = [NSLayoutConstraint]()
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[collectionView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-64-[collectionView]-44-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[categoryView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons.append(NSLayoutConstraint(item: categoryView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: collectionView, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
-        cons.append(NSLayoutConstraint(item: categoryView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: collectionView, attribute: NSLayoutAttribute.Height, multiplier: 1.0, constant: 0))
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[collectionView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-64-[collectionView]-44-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        view.addConstraints(cons)
+    }
+    
+    private func setupBlurView()
+    {
+        // 添加集合视图
+        view.addSubview(blurView)
+        
+        // 布局前的准备
+        var cons = [NSLayoutConstraint]()
+        let views = ["blurView": blurView]
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // 布局集合视图
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[blurView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+        cons.append(NSLayoutConstraint(item: blurView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: collectionView, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
+        cons.append(NSLayoutConstraint(item: blurView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: collectionView, attribute: NSLayoutAttribute.Height, multiplier: 1.0, constant: 0))
         view.addConstraints(cons)
     }
     
@@ -165,14 +179,8 @@ class SubjectViewController: BaseViewController
         return collectionView
     }()
     
-    /// 分类集合视图
-    private lazy var categoryView: CategoryView = {
-        let categoryView = CategoryView(frame: CGRectZero, collectionViewLayout: CategoryViewLayout())
-        categoryView.backgroundColor = UIColor.whiteColor()
-        categoryView.hidden = true
-        
-        return categoryView
-    }()
+    /// 高斯蒙板
+    private lazy var blurView: BlurView = BlurView(effect: UIBlurEffect(style: .Light))
 }
 
 extension SubjectViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
@@ -222,22 +230,5 @@ private class SubjectViewLayout: UICollectionViewFlowLayout
         // 设置集合视图属性
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.contentInset = UIEdgeInsetsMake(margin, margin, 0, margin)
-    }
-}
-
-private class CategoryViewLayout: UICollectionViewFlowLayout
-{
-    private override func prepareLayout()
-    {
-        let space: CGFloat = 1
-        
-        // 设置布局
-        itemSize = CGSizeMake((kScreenWidth - 1) * 0.5, kScreenWidth * 0.5 * 0.75)
-        minimumInteritemSpacing = space
-        minimumLineSpacing = space
-        scrollDirection = UICollectionViewScrollDirection.Vertical
-        
-        // 设置集合视图属性
-        collectionView?.showsVerticalScrollIndicator = false
     }
 }

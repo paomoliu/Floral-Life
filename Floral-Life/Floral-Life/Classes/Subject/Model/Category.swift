@@ -10,6 +10,7 @@ import UIKit
 
 class Category: BaseModel
 {
+    // MARK: - Property
     /// 分类id
     var id: String?
     /// 英文名
@@ -19,6 +20,7 @@ class Category: BaseModel
     /// 图片地址
     var img: String?
     
+    // MARK: - Class Methods
     /**
      加载分类数据
      
@@ -52,6 +54,7 @@ class Category: BaseModel
         return models
     }
     
+    // MARK: - Life Cycle
     override init(dict: [String : AnyObject])
     {
         super.init(dict: dict)

@@ -10,6 +10,7 @@ import UIKit
 
 class Author: BaseModel
 {
+    // MARK: - Property
     /// 作者id
     var id: String?
     /// 作者名称
@@ -21,6 +22,7 @@ class Author: BaseModel
     /// 等级
     var newAuth: String?
     
+    // MARK: - Life Cycle
     override init(dict: [String : AnyObject])
     {
         super.init(dict: dict)

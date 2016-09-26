@@ -10,6 +10,7 @@ import UIKit
 
 class Article: BaseModel
 {
+    // MARK: - Property
     /// 标题
     var title: String?
     /// 描述
@@ -31,6 +32,7 @@ class Article: BaseModel
         }
     }
     
+    // MARK: - Class Methods
     /**
      加载文章数据
      
@@ -65,6 +67,7 @@ class Article: BaseModel
         return models
     }
     
+    // MARK: - System Methods
     //setValuesForKeysWithDictionary内部会调用下面的方法
     override func setValue(value: AnyObject?, forKey key: String)
     {

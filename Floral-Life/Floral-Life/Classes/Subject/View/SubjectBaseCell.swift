@@ -39,7 +39,7 @@ class SubjectBaseCell: UICollectionViewCell
         }
     }
     
-    // MARK: - Init Methods
+    // MARK: - Life Cycle
     override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -52,6 +52,7 @@ class SubjectBaseCell: UICollectionViewCell
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Setup UI
     /**
      初始化UI
      */

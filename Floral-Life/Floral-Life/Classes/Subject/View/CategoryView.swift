@@ -14,7 +14,7 @@ class CategoryView: UICollectionView
 {
     var categorys: [Category]?
     
-    // MARK: - Init Methods
+    // MARK: - Life Cycle
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout)
     {
         super.init(frame: frame, collectionViewLayout: layout)
