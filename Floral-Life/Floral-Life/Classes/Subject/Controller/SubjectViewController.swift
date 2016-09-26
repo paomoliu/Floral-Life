@@ -20,6 +20,7 @@ class SubjectViewController: BaseViewController
             collectionView.reloadData()
         }
     }
+    var categoryBtn: UIButton?
     
     // MARK: - Life Cycle
     override func viewDidLoad()
@@ -37,16 +38,6 @@ class SubjectViewController: BaseViewController
     }
     
     // MARK: - Action Methods
-    /**
-    重写导航栏左边按钮的触发事件
-    
-    - parameter btn: 触发事件的按钮
-    */
-    override func leftAction(btn: UIBarButtonItem)
-    {
-        switchToCategory()
-    }
-    
     /**
      重写导航栏右边按钮的触发事件
      
@@ -68,7 +59,9 @@ class SubjectViewController: BaseViewController
     
     func switchToCategory()
     {
-        Tools.printLog("")
+        categoryView.hidden = categoryBtn!.selected
+        categoryBtn?.selected = !categoryBtn!.selected
+        rotationAnimation()
     }
     
     /**
@@ -98,11 +91,43 @@ class SubjectViewController: BaseViewController
     }
     
     // MARK: - Private Methods
+    /**
+     切换分类视图按钮旋转动画
+    */
+    private func rotationAnimation()
+    {
+        let angle = M_PI_2
+        let height = CGRectGetHeight(self.categoryView.frame)
+        let translationY = categoryBtn!.selected ? height : -height
+        
+        //weak：相当于OC中__weak，特点对象释放之后会将变量设置为nil, 若用它self需要加！
+        //unowned：相当于OC中unsafe_unretained，特点对象释放之后不会将变量设置为nil
+        UIView.animateWithDuration(0.5) { [unowned self]() -> Void in
+            if self.categoryBtn!.selected {
+                self.categoryBtn?.transform = CGAffineTransformRotate(self.categoryBtn!.transform, CGFloat(angle))
+                self.categoryView.transform = CGAffineTransformMakeTranslation(0, translationY)
+            } else {
+                self.categoryBtn?.transform = CGAffineTransformIdentity
+                self.categoryView.transform = CGAffineTransformIdentity
+            }
+        }
+    }
+    
     private func setNav()
     {
-        setNavigationBar("hp_type_16x16_", rightImagesName: ["f_search_22x22_", "宫格_16x16_"])
+        setNavigationBar("", rightImagesName: ["f_search_22x22_", "宫格_16x16_"])
         
+        //自定义leftBarButtonItem
+        let imageView = UIImageView(image: UIImage(named: "hp_type_16x16_"))
+        imageView.bounds = CGRectMake(0, 0, 16, 16)
+        categoryBtn = UIButton(type: UIButtonType.Custom)
+        categoryBtn?.frame = CGRectMake(0, 0, 16, 16)
+        categoryBtn?.addSubview(imageView)
+        categoryBtn?.addTarget(self, action: "switchToCategory", forControlEvents: UIControlEvents.TouchUpInside)
+        let leftBarItem = UIBarButtonItem(customView: categoryBtn!)
+        navigationItem.leftBarButtonItem = leftBarItem
         
+        // 标题
         let titleBtn = TitleButton()
         titleBtn.addTarget(self, action: "clickedTitleBtn:", forControlEvents: UIControlEvents.TouchUpInside)
         navigationItem.titleView = titleBtn
@@ -124,7 +149,8 @@ class SubjectViewController: BaseViewController
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[collectionView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-64-[collectionView]-44-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[categoryView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-64-[categoryView]-44-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict)
+        cons.append(NSLayoutConstraint(item: categoryView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: collectionView, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0))
+        cons.append(NSLayoutConstraint(item: categoryView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: collectionView, attribute: NSLayoutAttribute.Height, multiplier: 1.0, constant: 0))
         view.addConstraints(cons)
     }
     
@@ -143,6 +169,7 @@ class SubjectViewController: BaseViewController
     private lazy var categoryView: CategoryView = {
         let categoryView = CategoryView(frame: CGRectZero, collectionViewLayout: CategoryViewLayout())
         categoryView.backgroundColor = UIColor.whiteColor()
+        categoryView.hidden = true
         
         return categoryView
     }()
