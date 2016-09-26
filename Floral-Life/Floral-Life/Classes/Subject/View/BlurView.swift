@@ -55,7 +55,6 @@ private class CategoryViewLayout: UICollectionViewFlowLayout
         let space: CGFloat = 1
         
         // 设置布局
-        itemSize = CGSizeMake((kScreenWidth - 1) * 0.5, kScreenWidth * 0.5 * 0.75)
         minimumInteritemSpacing = space
         minimumLineSpacing = space
         scrollDirection = UICollectionViewScrollDirection.Vertical

@@ -14,6 +14,9 @@
 		658A2B221D979F3600315E3B /* SubjectBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A2B211D979F3600315E3B /* SubjectBaseCell.swift */; };
 		658A2B241D97FB7F00315E3B /* UILabel+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A2B231D97FB7F00315E3B /* UILabel+Category.swift */; };
 		658B9B891D99272B003929BE /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B9B881D99272B003929BE /* BlurView.swift */; };
+		658B9B8B1D994A3A003929BE /* Top10CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B9B8A1D994A3A003929BE /* Top10CategoryViewCell.swift */; };
+		658B9B8D1D994E25003929BE /* BaseCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B9B8C1D994E25003929BE /* BaseCategoryViewCell.swift */; };
+		658B9B8F1D995050003929BE /* NormalCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B9B8E1D995050003929BE /* NormalCategoryViewCell.swift */; };
 		658F31051D96A4C6008EE319 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658F31031D96A4C6008EE319 /* SubjectViewController.swift */; };
 		658F31071D96AEEF008EE319 /* SubjectGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658F31061D96AEEF008EE319 /* SubjectGridCell.swift */; };
 		658F31091D96B018008EE319 /* SubjectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658F31081D96B018008EE319 /* SubjectListCell.swift */; };
@@ -28,7 +31,6 @@
 		659D65221D94E01B00FBBCF3 /* UINavagationBar+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659D65211D94E01B00FBBCF3 /* UINavagationBar+Category.swift */; };
 		65BF90B91D9437C8006A83B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF90B81D9437C8006A83B0 /* LoginViewController.swift */; };
 		65BF90BB1D9437D5006A83B0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65BF90BA1D9437D5006A83B0 /* Login.storyboard */; };
-		65F0163C1D98286C003AB798 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F0163B1D98286C003AB798 /* CategoryViewCell.swift */; };
 		65F016401D9828AE003AB798 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F0163F1D9828AE003AB798 /* CategoryView.swift */; };
 		65FE98921D950851008CEB2C /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE98911D950851008CEB2C /* NetworkTool.swift */; };
 		65FE98971D950E59008CEB2C /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FE98951D950E59008CEB2C /* Article.swift */; };
@@ -70,6 +72,9 @@
 		658A2B211D979F3600315E3B /* SubjectBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectBaseCell.swift; sourceTree = "<group>"; };
 		658A2B231D97FB7F00315E3B /* UILabel+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Category.swift"; sourceTree = "<group>"; };
 		658B9B881D99272B003929BE /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		658B9B8A1D994A3A003929BE /* Top10CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top10CategoryViewCell.swift; sourceTree = "<group>"; };
+		658B9B8C1D994E25003929BE /* BaseCategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCategoryViewCell.swift; sourceTree = "<group>"; };
+		658B9B8E1D995050003929BE /* NormalCategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalCategoryViewCell.swift; sourceTree = "<group>"; };
 		658F31031D96A4C6008EE319 /* SubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		658F31061D96AEEF008EE319 /* SubjectGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectGridCell.swift; sourceTree = "<group>"; };
 		658F31081D96B018008EE319 /* SubjectListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectListCell.swift; sourceTree = "<group>"; };
@@ -84,7 +89,6 @@
 		659D65211D94E01B00FBBCF3 /* UINavagationBar+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavagationBar+Category.swift"; sourceTree = "<group>"; };
 		65BF90B81D9437C8006A83B0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		65BF90BA1D9437D5006A83B0 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		65F0163B1D98286C003AB798 /* CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		65F0163F1D9828AE003AB798 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		65FE98911D950851008CEB2C /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		65FE98931D95087A008CEB2C /* Floral-LifeBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Floral-LifeBridge.h"; sourceTree = "<group>"; };
@@ -206,8 +210,10 @@
 				658F31061D96AEEF008EE319 /* SubjectGridCell.swift */,
 				658F31081D96B018008EE319 /* SubjectListCell.swift */,
 				65F0163F1D9828AE003AB798 /* CategoryView.swift */,
-				65F0163B1D98286C003AB798 /* CategoryViewCell.swift */,
 				658B9B881D99272B003929BE /* BlurView.swift */,
+				658B9B8C1D994E25003929BE /* BaseCategoryViewCell.swift */,
+				658B9B8A1D994A3A003929BE /* Top10CategoryViewCell.swift */,
+				658B9B8E1D995050003929BE /* NormalCategoryViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -495,7 +501,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65F0163C1D98286C003AB798 /* CategoryViewCell.swift in Sources */,
 				65FE98971D950E59008CEB2C /* Article.swift in Sources */,
 				658B9B891D99272B003929BE /* BlurView.swift in Sources */,
 				659A404B1D9392C3004EDF67 /* MallViewController.swift in Sources */,
@@ -506,16 +511,19 @@
 				65FE98921D950851008CEB2C /* NetworkTool.swift in Sources */,
 				658F31071D96AEEF008EE319 /* SubjectGridCell.swift in Sources */,
 				658F31051D96A4C6008EE319 /* SubjectViewController.swift in Sources */,
+				658B9B8B1D994A3A003929BE /* Top10CategoryViewCell.swift in Sources */,
 				65FE989C1D952300008CEB2C /* BaseModel.swift in Sources */,
 				659A40491D9392B8004EDF67 /* CommunityViewController.swift in Sources */,
 				659A40471D93929C004EDF67 /* ProfileViewController.swift in Sources */,
 				658F31091D96B018008EE319 /* SubjectListCell.swift in Sources */,
 				65288ABD1D92E56800C01352 /* AppDelegate.swift in Sources */,
+				658B9B8F1D995050003929BE /* NormalCategoryViewCell.swift in Sources */,
 				65FE989A1D951E96008CEB2C /* Author.swift in Sources */,
 				65F016401D9828AE003AB798 /* CategoryView.swift in Sources */,
 				659A40571D942716004EDF67 /* Tools.swift in Sources */,
 				659A40511D939F8F004EDF67 /* BaseViewController.swift in Sources */,
 				65BF90B91D9437C8006A83B0 /* LoginViewController.swift in Sources */,
+				658B9B8D1D994E25003929BE /* BaseCategoryViewCell.swift in Sources */,
 				659A40441D9387E2004EDF67 /* MainViewController.swift in Sources */,
 				65FE98981D950E59008CEB2C /* Category.swift in Sources */,
 			);

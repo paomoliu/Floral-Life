@@ -8,7 +8,8 @@
 
 import UIKit
 
-let kCategoryCellID = "kCategoryCellID"
+let kNormalCellID = "kNormalCellID"
+let kTop10CellID = "kTop10CellID"
 
 class CategoryView: UICollectionView
 {
@@ -21,7 +22,9 @@ class CategoryView: UICollectionView
         
         // 设置聚合视图数据源与注册表单元
         dataSource = self
-        registerClass(CategoryViewCell.self, forCellWithReuseIdentifier: kCategoryCellID)
+        delegate = self
+        registerClass(NormalCategoryViewCell.self, forCellWithReuseIdentifier: kNormalCellID)
+        registerClass(Top10CategoryViewCell.self, forCellWithReuseIdentifier: kTop10CellID)
         
         loadData()
     }
@@ -43,7 +46,7 @@ class CategoryView: UICollectionView
     }
 }
 
-extension CategoryView: UICollectionViewDataSource
+extension CategoryView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -52,9 +55,23 @@ extension CategoryView: UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kCategoryCellID, forIndexPath: indexPath) as! CategoryViewCell
-        cell.category = categorys![indexPath.item]
+        var cell: BaseCategoryViewCell?
+        if indexPath.item == 0 {
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier(kTop10CellID, forIndexPath: indexPath) as? BaseCategoryViewCell
+        } else {
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier(kNormalCellID, forIndexPath: indexPath) as? BaseCategoryViewCell
+        }
+        cell!.category = categorys![indexPath.item]
         
-        return cell
+        return cell!
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
+    {
+        if indexPath.item == 0 {
+            return CGSizeMake(kScreenWidth, kScreenWidth * 0.5 * 0.75)
+        }
+        
+        return CGSizeMake((kScreenWidth - 1) * 0.5, kScreenWidth * 0.5 * 0.75)
     }
 }

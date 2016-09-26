@@ -1,15 +1,15 @@
 //
-//  CategoryViewCell.swift
+//  BaseCategoryViewCell.swift
 //  Floral-Life
 //
-//  Created by paomoliu on 16/9/25.
+//  Created by paomoliu on 16/9/26.
 //  Copyright © 2016年 Sunshine Girl. All rights reserved.
 //
 
 import UIKit
 import SDWebImage
 
-class CategoryViewCell: UICollectionViewCell
+class BaseCategoryViewCell: UICollectionViewCell
 {
     var category: Category? {
         didSet {
@@ -25,13 +25,13 @@ class CategoryViewCell: UICollectionViewCell
         
         setupUI()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Setup UI
-    private func setupUI()
+    func setupUI()
     {
         // 添加子控件
         contentView.addSubview(pictureView)
@@ -50,8 +50,6 @@ class CategoryViewCell: UICollectionViewCell
         cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|[pictureView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|[coverView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|[coverView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
-        cons.append(NSLayoutConstraint(item: nameLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0))
-        cons.append(NSLayoutConstraint(item: nameLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0))
         contentView.addConstraints(cons)
     }
     
@@ -74,7 +72,7 @@ class CategoryViewCell: UICollectionViewCell
     }()
     
     /// 类别中英文名称
-    private lazy var nameLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.whiteColor()
         label.font = UIFont.systemFontOfSize(12)
@@ -82,3 +80,4 @@ class CategoryViewCell: UICollectionViewCell
         return label
     }()
 }
+
