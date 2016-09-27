@@ -116,6 +116,9 @@ class SubjectViewController: BaseViewController
         }
     }
     
+    /**
+     计算item大小
+     */
     private func caculateItemSize(article: Article) -> CGSize
     {
         

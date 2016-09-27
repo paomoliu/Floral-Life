@@ -11,15 +11,15 @@
 		65288AC11D92E56800C01352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65288AC01D92E56800C01352 /* Assets.xcassets */; };
 		65288ACF1D92E56800C01352 /* Floral-LifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65288ACE1D92E56800C01352 /* Floral-LifeTests.swift */; };
 		65288ADA1D92E56800C01352 /* Floral-LifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65288AD91D92E56800C01352 /* Floral-LifeUITests.swift */; };
-		658A2B221D979F3600315E3B /* SubjectBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A2B211D979F3600315E3B /* SubjectBaseCell.swift */; };
+		657D19BF1D9A591B0028A61C /* BaseCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657D19B91D9A591B0028A61C /* BaseCategoryViewCell.swift */; };
+		657D19C01D9A591B0028A61C /* NormalCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657D19BA1D9A591B0028A61C /* NormalCategoryViewCell.swift */; };
+		657D19C11D9A591B0028A61C /* SubjectBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657D19BB1D9A591B0028A61C /* SubjectBaseCell.swift */; };
+		657D19C21D9A591B0028A61C /* SubjectGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657D19BC1D9A591B0028A61C /* SubjectGridCell.swift */; };
+		657D19C31D9A591B0028A61C /* SubjectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657D19BD1D9A591B0028A61C /* SubjectListCell.swift */; };
+		657D19C41D9A591B0028A61C /* Top10CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657D19BE1D9A591B0028A61C /* Top10CategoryViewCell.swift */; };
 		658A2B241D97FB7F00315E3B /* UILabel+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A2B231D97FB7F00315E3B /* UILabel+Category.swift */; };
 		658B9B891D99272B003929BE /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B9B881D99272B003929BE /* BlurView.swift */; };
-		658B9B8B1D994A3A003929BE /* Top10CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B9B8A1D994A3A003929BE /* Top10CategoryViewCell.swift */; };
-		658B9B8D1D994E25003929BE /* BaseCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B9B8C1D994E25003929BE /* BaseCategoryViewCell.swift */; };
-		658B9B8F1D995050003929BE /* NormalCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B9B8E1D995050003929BE /* NormalCategoryViewCell.swift */; };
 		658F31051D96A4C6008EE319 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658F31031D96A4C6008EE319 /* SubjectViewController.swift */; };
-		658F31071D96AEEF008EE319 /* SubjectGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658F31061D96AEEF008EE319 /* SubjectGridCell.swift */; };
-		658F31091D96B018008EE319 /* SubjectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658F31081D96B018008EE319 /* SubjectListCell.swift */; };
 		659A40441D9387E2004EDF67 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659A40431D9387E2004EDF67 /* MainViewController.swift */; };
 		659A40471D93929C004EDF67 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659A40461D93929C004EDF67 /* ProfileViewController.swift */; };
 		659A40491D9392B8004EDF67 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659A40481D9392B8004EDF67 /* CommunityViewController.swift */; };
@@ -69,15 +69,15 @@
 		65288AD51D92E56800C01352 /* Floral-LifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Floral-LifeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65288AD91D92E56800C01352 /* Floral-LifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Floral-LifeUITests.swift"; sourceTree = "<group>"; };
 		65288ADB1D92E56800C01352 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		658A2B211D979F3600315E3B /* SubjectBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectBaseCell.swift; sourceTree = "<group>"; };
+		657D19B91D9A591B0028A61C /* BaseCategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCategoryViewCell.swift; sourceTree = "<group>"; };
+		657D19BA1D9A591B0028A61C /* NormalCategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalCategoryViewCell.swift; sourceTree = "<group>"; };
+		657D19BB1D9A591B0028A61C /* SubjectBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectBaseCell.swift; sourceTree = "<group>"; };
+		657D19BC1D9A591B0028A61C /* SubjectGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectGridCell.swift; sourceTree = "<group>"; };
+		657D19BD1D9A591B0028A61C /* SubjectListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectListCell.swift; sourceTree = "<group>"; };
+		657D19BE1D9A591B0028A61C /* Top10CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top10CategoryViewCell.swift; sourceTree = "<group>"; };
 		658A2B231D97FB7F00315E3B /* UILabel+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Category.swift"; sourceTree = "<group>"; };
 		658B9B881D99272B003929BE /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		658B9B8A1D994A3A003929BE /* Top10CategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top10CategoryViewCell.swift; sourceTree = "<group>"; };
-		658B9B8C1D994E25003929BE /* BaseCategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCategoryViewCell.swift; sourceTree = "<group>"; };
-		658B9B8E1D995050003929BE /* NormalCategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalCategoryViewCell.swift; sourceTree = "<group>"; };
 		658F31031D96A4C6008EE319 /* SubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
-		658F31061D96AEEF008EE319 /* SubjectGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectGridCell.swift; sourceTree = "<group>"; };
-		658F31081D96B018008EE319 /* SubjectListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectListCell.swift; sourceTree = "<group>"; };
 		659A40431D9387E2004EDF67 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		659A40461D93929C004EDF67 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		659A40481D9392B8004EDF67 /* CommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +195,19 @@
 			path = "Floral-LifeUITests";
 			sourceTree = "<group>";
 		};
+		657D19B81D9A591B0028A61C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				657D19B91D9A591B0028A61C /* BaseCategoryViewCell.swift */,
+				657D19BA1D9A591B0028A61C /* NormalCategoryViewCell.swift */,
+				657D19BB1D9A591B0028A61C /* SubjectBaseCell.swift */,
+				657D19BC1D9A591B0028A61C /* SubjectGridCell.swift */,
+				657D19BD1D9A591B0028A61C /* SubjectListCell.swift */,
+				657D19BE1D9A591B0028A61C /* Top10CategoryViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		658F31021D96A4C6008EE319 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,14 +219,8 @@
 		658F31041D96A4C6008EE319 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				658A2B211D979F3600315E3B /* SubjectBaseCell.swift */,
-				658F31061D96AEEF008EE319 /* SubjectGridCell.swift */,
-				658F31081D96B018008EE319 /* SubjectListCell.swift */,
 				65F0163F1D9828AE003AB798 /* CategoryView.swift */,
 				658B9B881D99272B003929BE /* BlurView.swift */,
-				658B9B8C1D994E25003929BE /* BaseCategoryViewCell.swift */,
-				658B9B8A1D994A3A003929BE /* Top10CategoryViewCell.swift */,
-				658B9B8E1D995050003929BE /* NormalCategoryViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				658F31021D96A4C6008EE319 /* Controller */,
+				657D19B81D9A591B0028A61C /* Cell */,
 				658F31041D96A4C6008EE319 /* View */,
 				65FE98941D950E59008CEB2C /* Model */,
 			);
@@ -504,26 +512,26 @@
 				65FE98971D950E59008CEB2C /* Article.swift in Sources */,
 				658B9B891D99272B003929BE /* BlurView.swift in Sources */,
 				659A404B1D9392C3004EDF67 /* MallViewController.swift in Sources */,
+				657D19C41D9A591B0028A61C /* Top10CategoryViewCell.swift in Sources */,
 				659A40551D94237B004EDF67 /* TitleButton.swift in Sources */,
-				658A2B221D979F3600315E3B /* SubjectBaseCell.swift in Sources */,
+				657D19C31D9A591B0028A61C /* SubjectListCell.swift in Sources */,
+				657D19C01D9A591B0028A61C /* NormalCategoryViewCell.swift in Sources */,
+				657D19C11D9A591B0028A61C /* SubjectBaseCell.swift in Sources */,
 				658A2B241D97FB7F00315E3B /* UILabel+Category.swift in Sources */,
 				659D65221D94E01B00FBBCF3 /* UINavagationBar+Category.swift in Sources */,
 				65FE98921D950851008CEB2C /* NetworkTool.swift in Sources */,
-				658F31071D96AEEF008EE319 /* SubjectGridCell.swift in Sources */,
 				658F31051D96A4C6008EE319 /* SubjectViewController.swift in Sources */,
-				658B9B8B1D994A3A003929BE /* Top10CategoryViewCell.swift in Sources */,
+				657D19C21D9A591B0028A61C /* SubjectGridCell.swift in Sources */,
 				65FE989C1D952300008CEB2C /* BaseModel.swift in Sources */,
 				659A40491D9392B8004EDF67 /* CommunityViewController.swift in Sources */,
 				659A40471D93929C004EDF67 /* ProfileViewController.swift in Sources */,
-				658F31091D96B018008EE319 /* SubjectListCell.swift in Sources */,
 				65288ABD1D92E56800C01352 /* AppDelegate.swift in Sources */,
-				658B9B8F1D995050003929BE /* NormalCategoryViewCell.swift in Sources */,
 				65FE989A1D951E96008CEB2C /* Author.swift in Sources */,
 				65F016401D9828AE003AB798 /* CategoryView.swift in Sources */,
 				659A40571D942716004EDF67 /* Tools.swift in Sources */,
 				659A40511D939F8F004EDF67 /* BaseViewController.swift in Sources */,
 				65BF90B91D9437C8006A83B0 /* LoginViewController.swift in Sources */,
-				658B9B8D1D994E25003929BE /* BaseCategoryViewCell.swift in Sources */,
+				657D19BF1D9A591B0028A61C /* BaseCategoryViewCell.swift in Sources */,
 				659A40441D9387E2004EDF67 /* MainViewController.swift in Sources */,
 				65FE98981D950E59008CEB2C /* Category.swift in Sources */,
 			);
@@ -597,7 +605,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -635,7 +643,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -649,6 +657,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Floral-Life/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cqnu.Floral-Life";
@@ -664,6 +673,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Floral-Life/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cqnu.Floral-Life";
 				PRODUCT_NAME = "$(TARGET_NAME)";

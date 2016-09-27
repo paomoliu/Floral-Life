@@ -11,6 +11,8 @@ import UIKit
 class Article: BaseModel
 {
     // MARK: - Property
+    /// 文章id
+    var id: String?
     /// 标题
     var title: String?
     /// 描述
