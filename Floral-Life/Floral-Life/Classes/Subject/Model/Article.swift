@@ -18,7 +18,11 @@ class Article: BaseModel
     /// 描述
     var desc: String?
     /// 图片地址
-    var smallIcon: String?
+    var smallIcon: String? {
+        didSet {
+            smallIconUrl = NSURL(string: smallIcon!)
+        }
+    }
     /// 阅读量
     var read: Int = 0
     /// 点赞量
@@ -28,11 +32,17 @@ class Article: BaseModel
     /// 作者
     var author: Author?
     /// 类别
-    var category: Category? {
+    var category: Category?
+    /// 文章网页地址
+    var pageUrl: String? {
         didSet {
-            category?.name = "［" + category!.name! + "］"
+            pageURL = NSURL(string: pageUrl!)
         }
     }
+    /// 图片url
+    var smallIconUrl: NSURL?
+    /// 文章网页
+    var pageURL: NSURL?
     
     // MARK: - Class Methods
     /**

@@ -241,6 +241,14 @@ extension SubjectViewController: UICollectionViewDataSource, UICollectionViewDel
         return cell
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    {
+        let detailVC = DetailViewController()
+        detailVC.article = subjects![indexPath.item]
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
         return caculateItemSize(subjects![indexPath.item])

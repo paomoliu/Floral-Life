@@ -18,7 +18,12 @@ class Category: BaseModel
     /// 中文名
     var name: String?
     /// 图片地址
-    var img: String?
+    var img: String? {
+        didSet {
+            imgUrl = NSURL(string: img!)
+        }
+    }
+    var imgUrl: NSURL?
     
     // MARK: - Class Methods
     /**

@@ -31,7 +31,7 @@ class SubjectBaseCell: UICollectionViewCell
 {
     var subject: Article? {
         didSet {
-            pictrueView.sd_setImageWithURL(NSURL(string: subject!.smallIcon!))
+            pictrueView.sd_setImageWithURL(subject?.smallIconUrl)
             titleLabel.text = subject!.title
             descLabel.text = subject!.desc
             readLabel.text = "\(subject!.read)"

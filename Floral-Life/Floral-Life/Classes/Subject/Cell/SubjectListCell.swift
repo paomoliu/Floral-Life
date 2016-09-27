@@ -13,11 +13,11 @@ class SubjectListCell: SubjectBaseCell
 {
     override var subject: Article? {
         didSet {
-            avatar.sd_setImageWithURL(NSURL(string: subject!.author!.headImg!))
-            newAuthView.image = UIImage(named: subject?.author?.newAuth == "1" ? "copanyAuth_14x14_" : "personAuth_14x14_")
+            avatar.sd_setImageWithURL(subject!.author!.headImgUrl)
+            newAuthView.image = UIImage(named: subject!.author!.authImgName!)
             nameLabel.text = subject?.author!.userName
             identityLabel.text = subject?.author?.identity
-            categoryLabel.text = subject?.category?.name
+            categoryLabel.text = "［\(subject!.category!.name!)］"
             commentLabel.text = "\(subject!.fnCommentNum)"
             descLabel.attributedText = UILabel.setLabelLineSpace(4, text: subject!.desc!)
         }

@@ -13,7 +13,7 @@ class BaseCategoryViewCell: UICollectionViewCell
 {
     var category: Category? {
         didSet {
-            pictureView.sd_setImageWithURL(NSURL(string: category!.img!))
+            pictureView.sd_setImageWithURL(category?.imgUrl)
             nameLabel.text = "\(category!.enName!)｜\(category!.name!)"
         }
     }

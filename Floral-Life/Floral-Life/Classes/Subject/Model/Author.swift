@@ -18,9 +18,21 @@ class Author: BaseModel
     /// 身份
     var identity: String?
     /// 作者头像
-    var headImg: String?
+    var headImg: String? {
+        didSet {
+            headImgUrl = NSURL(string: headImg!)
+        }
+    }
     /// 等级
-    var newAuth: String?
+    var newAuth: String? {
+        didSet {
+            authImgName = newAuth == "1" ? "copanyAuth_14x14_" : "personAuth_14x14_"
+        }
+    }
+    /// 头像url
+    var headImgUrl: NSURL?
+    /// 等级图片名称
+    var authImgName: String?
     
     // MARK: - Life Cycle
     override init(dict: [String : AnyObject])
