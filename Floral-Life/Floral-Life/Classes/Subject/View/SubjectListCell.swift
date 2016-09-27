@@ -76,7 +76,7 @@ class SubjectListCell: SubjectBaseCell
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-8-[descLabel]-40-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[lineView]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("H:[readView]-6-[readLabel]-12-[appointView(appointWidth)]-6-[appointLabel]-12-[commentView]-6-[commentLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
-        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[pictrueView(height)]-8-[nameLabel]-4-[identityLabel][categoryLabel]-4-[titleLabel]-4-[descLabel]-8-[lineView(1)]-8-[readView]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+        cons += NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[pictrueView(height)]-8-[nameLabel]-4-[identityLabel][categoryLabel]-4-[titleLabel]-8-[descLabel]-6-[lineView(1)]-8-[readView]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[readLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[appointView(appointheight)]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
         cons += NSLayoutConstraint.constraintsWithVisualFormat("V:[lineView]-8-[appointLabel]-10-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
@@ -111,8 +111,8 @@ class SubjectListCell: SubjectBaseCell
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFontOfSize(14)
+        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         label.textAlignment = NSTextAlignment.Right
-        label.backgroundColor = UIColor.yellowColor()
         
         return label 
     }()
@@ -123,7 +123,6 @@ class SubjectListCell: SubjectBaseCell
         label.font = UIFont.systemFontOfSize(10)
         label.textAlignment = NSTextAlignment.Right
         label.textColor = UIColor.grayColor()
-        label.backgroundColor = UIColor.yellowColor()
         
         return label
     }()
@@ -132,8 +131,7 @@ class SubjectListCell: SubjectBaseCell
     private lazy var categoryLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFontOfSize(12)
-        label.textColor = UIColor(red: 204/255, green: 186/255, blue: 148/255, alpha: 1.0)
-        label.backgroundColor = UIColor.yellowColor()
+        label.textColor = UIColor(red: 212/255, green: 162/255, blue: 26/255, alpha: 1.0)
         
         return label
     }()

@@ -14,12 +14,14 @@ var isGridMode: Bool = false
 
 class SubjectViewController: BaseViewController
 {
+    // MARK: - Property
     var subjects: [Article]? {
         didSet {
             //当设置完数据，刷新集合视图
             collectionView.reloadData()
         }
     }
+    /// 分类按钮，做旋转动画
     var categoryBtn: UIButton?
     
     // MARK: - Life Cycle
@@ -114,6 +116,43 @@ class SubjectViewController: BaseViewController
         }
     }
     
+    private func caculateItemSize(article: Article) -> CGSize
+    {
+        
+        let margin: CGFloat = 10
+        var space: CGFloat = 12
+        var width: CGFloat = 0
+        var height: CGFloat = 0
+        if !isGridMode {
+            /// 辅助计算cell高度
+            let label = UILabel()
+            width = kScreenWidth - margin * 2
+            height = width * 0.5
+            // 58是各个间距和, 除了作者身份
+            height += CGFloat(60)
+            // 作者名label高度
+            height += label.labelHeight(article.author!.userName!, fontSize:14 , width: (kScreenWidth - 82))
+            // 作者身份label高度
+            height += label.labelHeight(article.author!.identity!, fontSize: 10, width: (kScreenWidth - 82))
+            // 分类label高度
+            height += label.labelHeight(article.category!.name!, fontSize: 12, width: (kScreenWidth - 48))
+            // 标题label高度
+            height += label.labelHeight(article.title!, fontSize: 12, width: (kScreenWidth - 48))
+            // 描述label高度
+            height += label.labelHeightWithLineSpace(4, text: article.desc!, font: UIFont.systemFontOfSize(10), width: (kScreenWidth - 48))
+            
+            if article.author!.identity! != "" {
+                height += 4
+            }
+        } else {
+            space = 5
+            width = (kScreenWidth - margin * 2 - space) * 0.5
+            height = width * 0.75 + 80
+        }
+        
+        return CGSize(width: width, height: height)
+    }
+    
     // MARK: - SetupUI Methods
     private func setNav()
     {
@@ -199,10 +238,10 @@ extension SubjectViewController: UICollectionViewDataSource, UICollectionViewDel
         return cell
     }
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
-//    {
-//        return CGSizeMake(320, 250)
-//    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
+    {
+        return caculateItemSize(subjects![indexPath.item])
+    }
 }
 
 private class SubjectViewLayout: UICollectionViewFlowLayout
@@ -212,17 +251,11 @@ private class SubjectViewLayout: UICollectionViewFlowLayout
         var space: CGFloat = 12
         let margin: CGFloat = 10
         
-        var width = kScreenWidth - margin * 2
-        var height = width * 0.5 + 150
-        
         if isGridMode {
             space = 5
-            width = (kScreenWidth - margin * 2 - space) * 0.5
-            height = width * 0.75 + 80
         }
         
         // 设置布局
-        itemSize = CGSizeMake(width, height)
         minimumInteritemSpacing = space
         minimumLineSpacing = space
         scrollDirection = UICollectionViewScrollDirection.Vertical

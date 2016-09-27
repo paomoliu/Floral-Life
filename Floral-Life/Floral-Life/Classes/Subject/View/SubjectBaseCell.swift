@@ -93,7 +93,6 @@ class SubjectBaseCell: UICollectionViewCell
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFontOfSize(12)
-        label.backgroundColor = UIColor.yellowColor()
         
         return label
     }()
@@ -103,7 +102,6 @@ class SubjectBaseCell: UICollectionViewCell
         let label = UILabel()
         label.font = UIFont.systemFontOfSize(10)
         label.textColor = UIColor.grayColor()
-        label.backgroundColor = UIColor.yellowColor()
         
         return label
     }()
