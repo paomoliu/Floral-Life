@@ -16,11 +16,7 @@ let kScreenHeight = UIScreen.mainScreen().bounds.height
 class DetailViewController: UITableViewController
 {
     var article: Article?
-    var webCellHeight: CGFloat? {
-        didSet {
-            tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
-        }
-    }
+    var webCellHeight: CGFloat?
     var headCellHeight: CGFloat = 0
     
     // MARK: - Life Cycle
@@ -34,15 +30,6 @@ class DetailViewController: UITableViewController
         tableView.delegate = self
         tableView.registerClass(DetailHeadViewCell.self, forCellReuseIdentifier: kHeadViewCellID)
         tableView.registerClass(DetailWebViewCell.self, forCellReuseIdentifier: kWebViewCellID)
-        
-        NSNotificationCenter.defaultCenter().addObserverForName(kWebHeightChanged, object: nil, queue: NSOperationQueue.mainQueue()) { [weak self](notif) -> Void in
-            self?.webCellHeight = CGFloat(notif.userInfo![kWebCellHeightKey] as! Float)
-        }
-    }
-    
-    deinit
-    {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     // MARK: - Action Methods
@@ -66,7 +53,7 @@ class DetailViewController: UITableViewController
     }
 }
 
-extension DetailViewController
+extension DetailViewController: WebCellHeightDelegate
 {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -85,6 +72,7 @@ extension DetailViewController
         let cell = tableView.dequeueReusableCellWithIdentifier(kWebViewCellID) as! DetailWebViewCell
         cell.pageUrl = article?.pageURL
         cell.selectionStyle = .None
+        cell.delegate = self
         
         return cell
     }
@@ -99,5 +87,11 @@ extension DetailViewController
         }
         
         return webCellHeight ?? kScreenHeight - headCellHeight - 64
+    }
+    
+    func cellHeightChange(height: CGFloat)
+    {
+        webCellHeight = height
+        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
     }
 }

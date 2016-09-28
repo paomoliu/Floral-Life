@@ -10,6 +10,11 @@ import UIKit
 
 let kWebCellHeightKey = "kWebCellHeightKey"
 
+protocol WebCellHeightDelegate: NSObjectProtocol
+{
+    func cellHeightChange(height: CGFloat)
+}
+
 class DetailWebViewCell: UITableViewCell
 {
     // MARK: - Property
@@ -18,14 +23,7 @@ class DetailWebViewCell: UITableViewCell
             webView.loadRequest(NSURLRequest(URL: pageUrl!))
         }
     }
-    var cellHeight: CGFloat = 0 {
-        didSet {
-            if cellHeight > 0 {
-                isFinishLoadH5 = true
-                NSNotificationCenter.defaultCenter().postNotificationName(kWebHeightChanged, object: self, userInfo: [kWebCellHeightKey: Float(cellHeight)])
-            }
-        }
-    }
+    weak var delegate: WebCellHeightDelegate?
     private var isFinishLoadH5: Bool = false
     
     // MARK: - Life Cycle
@@ -68,9 +66,9 @@ extension DetailWebViewCell: UIWebViewDelegate
 {
     func webViewDidFinishLoad(webView: UIWebView)
     {
-        if !isFinishLoadH5 && webView.scrollView.contentSize.height > 0 {
-            cellHeight = webView.scrollView.contentSize.height
+        if  !isFinishLoadH5 && webView.scrollView.contentSize.height > 0 {
             isFinishLoadH5 = true
+            delegate?.cellHeightChange(webView.scrollView.contentSize.height)
         } //if
     } //func
 } //end
