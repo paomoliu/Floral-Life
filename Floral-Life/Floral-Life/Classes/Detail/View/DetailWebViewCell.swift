@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 let kWebCellHeightKey = "kWebCellHeightKey"
 
@@ -53,20 +54,21 @@ class DetailWebViewCell: UITableViewCell
     }
     
     // MARK: - Lazy Loading
-    private lazy var webView: UIWebView = {
-        let webView = UIWebView()
+    private lazy var webView: WKWebView = {
+        let webView = WKWebView()
         webView.scrollView.scrollEnabled = false
-        webView.delegate = self
+        webView.navigationDelegate = self
         
         return webView
     }()
 }
 
-extension DetailWebViewCell: UIWebViewDelegate
+extension DetailWebViewCell: WKNavigationDelegate
 {
-    func webViewDidFinishLoad(webView: UIWebView)
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!)
     {
-        if  !isFinishLoadH5 && webView.scrollView.contentSize.height > 0 {
+        if !isFinishLoadH5 && webView.scrollView.contentSize.height > 0 {
+            print(webView.scrollView.contentSize.height)
             isFinishLoadH5 = true
             delegate?.cellHeightChange(webView.scrollView.contentSize.height)
         } //if
